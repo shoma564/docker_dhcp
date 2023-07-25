@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+
+  dhcp4sv:
+    build: ./v4
+    image: dhcp4:1.0.0
+    container_name: dhcpsv4
+    restart: "always"
+    environment:
+      TZ: Asia/Tokyo
+      DHCPIF: "enp1s0"
+    hostname: dhcp4
+    network_mode: "host"
+    tty: true
+
+
+    volumes:
+      - v4:/var/lib/dhcp
+
+
+volumes:
+  v4:

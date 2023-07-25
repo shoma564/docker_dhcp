@@ -1,0 +1,4 @@
+FROM ubuntu:latest
+RUN apt -y update
+RUN apt -y install isc-dhcp-server
+ADD dhcpd.conf y/etc/dhcp/dhcpd.conf
